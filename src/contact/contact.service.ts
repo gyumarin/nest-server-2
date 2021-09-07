@@ -34,14 +34,12 @@ export class ContactService {
       contactCreateInput.age = createAge();
     }
 
-    console.log('create : ', contactCreateInput);
     return this.prisma.contact.create({
       data: contactCreateInput,
     });
   }
 
   findAll(): Promise<Contact[]> {
-    console.log();
     return this.prisma.contact.findMany();
   }
 

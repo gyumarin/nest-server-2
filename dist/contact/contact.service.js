@@ -35,13 +35,11 @@ let ContactService = class ContactService {
         if (contactCreateInput.age == (undefined || 0)) {
             contactCreateInput.age = (0, func_1.createAge)();
         }
-        console.log('create : ', contactCreateInput);
         return this.prisma.contact.create({
             data: contactCreateInput,
         });
     }
     findAll() {
-        console.log();
         return this.prisma.contact.findMany();
     }
     findOne(id) {
